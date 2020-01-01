@@ -4,6 +4,9 @@ HOMEDIR = $(shell pwd)
 BROWSERIFY = ./node_modules/.bin/browserify
 UGLIFY = ./node_modules/uglify-es/bin/uglifyjs
 
+deploy:
+	npm version patch && make build && git commit -a -m"Build." && make pushall
+
 pushall: sync
 	git push origin master
 
