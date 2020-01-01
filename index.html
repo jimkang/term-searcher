@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>Search</title>
+    <link rel="stylesheet" href="app.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div id="status-message" class="hidden"></div>
+
+    <h1 id="title">Search</h1>
+
+    <section id="search-form">
+      <form>
+        <section>
+          <h4>Term</h4>
+          <div>(Yes, only one term for now. No spaces!)</div>
+          <input
+            type="search"
+            id="term"
+            name="term"
+            value=""
+            required
+            pattern="[^\s]+"
+          />
+          <button id="submit-search-button">Search!</button>
+        </section>
+      </form>
+
+      <div id="searching-message" class="progress-message hidden">
+        Searching…
+      </div>
+    </section>
+
+    <section id="results-container">
+      <ul id="results-root"></ul>
+    </section>
+
+    <!-- Space so that you don't have to scroll on mobile to hit save. -->
+    <div class="bottom-space"></div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
