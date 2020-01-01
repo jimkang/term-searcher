@@ -1,12 +1,12 @@
 term-searcher
 ==================
 
-Send notes to [note-taker](https://github.com/jimkang/note-taker).
+Searches a [static-web-archive](jimkang/static-web-archive) using metadata from [archive-tfidf](https://github.com/jimkang/archive-tfidf).
 
 Installation
 ------------
 
-First, install Node. Then:
+First, install Node and set up an .npmrc to point to the GitHub Package Registry. Then:
 
     npm install
     npm install wzrd -g
@@ -14,7 +14,7 @@ First, install Node. Then:
 Usage
 -----
 
-    make run    
+    make run
 
 Then, wzrd will say something like:
 
@@ -27,18 +27,12 @@ You can then add code starting in app.js. This won't compile down to ES 5 – ex
 
 Run `make prettier` (expects you to have run `npm install -g prettier`) and `eslint .` before committing.
 
-TODO
----
-
-- Render saved message
-- Render loaded beat
-
 License
 -------
 
 The MIT License (MIT)
 
-Copyright (c) 2018 Jim Kang
+Copyright (c) 2019 Jim Kang
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

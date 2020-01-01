@@ -1,7 +1,7 @@
 {
   "name": "term-searcher",
   "version": "1.0.0",
-  "description": "Send notes!",
+  "description": "Searches a [static-web-archive](jimkang/static-web-archive) using metadata from [archive-tfidf](https://github.com/jimkang/archive-tfidf).",
   "main": "index.js",
   "private": true,
   "scripts": {
