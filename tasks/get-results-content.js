@@ -21,20 +21,32 @@ function getResultsContent({ searchResults, contentBaseURL }, getResultsDone) {
   }
 
   function getContent({ ref }, done) {
-    request(
-      { method: 'GET', url: `${contentBaseURL}/meta/${ref}.json`, json: true },
-      bodyMover(passContent)
-    );
+    var reqsToTry = [
+      { method: 'GET', json: true, url: `${contentBaseURL}/meta/${ref}.json` },
+      { method: 'GET', json: false, url: `${contentBaseURL}/${ref}.html` }
+    ];
+    var tryCount = 0;
+    tryToGet(reqsToTry[tryCount]);
+
+    function tryToGet(reqOpts) {
+      request(reqOpts, bodyMover(passContent));
+    }
 
     function passContent(error, content) {
+      tryCount += 1;
+
       if (error) {
-        console.log(
-          'Error while trying to get content for',
-          ref,
-          error,
-          error.stack
-        );
-        done();
+        if (tryCount < reqsToTry.length) {
+          tryToGet(reqsToTry[tryCount]);
+        } else {
+          console.log(
+            'Error while trying to get content for',
+            ref,
+            error,
+            error.stack
+          );
+          done();
+        }
         return;
       }
       done(null, content);
