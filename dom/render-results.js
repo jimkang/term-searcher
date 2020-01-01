@@ -25,15 +25,21 @@ function renderResults({ resultsContents, contentBaseURL }) {
       return scrapeContentsOut(cellOrHTML);
     }
   }
-}
 
-function scrapeContentsOut(pageHTML) {
-  // Only works for old static-web-archive pages.
-  var startIndex =
-    pageHTML.indexOf(singlePageContentStartMarker) +
-    singlePageContentStartMarker.length;
-  var endIndex = pageHTML.indexOf(singlePageContentEndMarker);
-  return '<li class="pane">' + pageHTML.slice(startIndex, endIndex) + '</li>';
+  function scrapeContentsOut(pageHTML) {
+    // Only works for old static-web-archive pages.
+    var startIndex =
+      pageHTML.indexOf(singlePageContentStartMarker) +
+      singlePageContentStartMarker.length;
+    var endIndex = pageHTML.indexOf(singlePageContentEndMarker);
+    var content = pageHTML.slice(startIndex, endIndex);
+    var linkStartIndex = content.indexOf('href="') + 6;
+    var linkEndIndex = content.indexOf('.html') + 5;
+    var origHREF = content.slice(linkStartIndex, linkEndIndex);
+    var href = `${contentBaseURL}/${origHREF}`;
+    content = content.replace(origHREF, href);
+    return '<li class="pane">' + content + '</li>';
+  }
 }
 
 module.exports = renderResults;
