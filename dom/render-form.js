@@ -5,8 +5,8 @@ function renderForm({ term, archiveName }) {
   if (term) {
     termInput.value = term;
   }
-  titleLabel.textContent = `Search ${archiveName}`;
-  document.title = `Search ${archiveName}`;
+  titleLabel.textContent = `Search ${archiveName} archive`;
+  document.title = `Search ${archiveName} archive`;
 }
 
 module.exports = renderForm;

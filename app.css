@@ -5,7 +5,8 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: #ffe264;
-  color: #444;
+  background-color: #91f98b;
+  color: #333;
 }
 
 .hidden {
@@ -28,7 +29,6 @@ body {
 }
 
 #note-form input {
-  /*! font-family: Georgia, serif; */
   font-size: 30px;
   padding: 0.5em;
   border-style: solid;
@@ -107,7 +107,6 @@ button {
   border-width: 1px;
   border-color: #aaa;
   border-style: solid;
-  /*! font-family: futura; */
   min-width: 44px;
   box-shadow: #444 0 0 4px;
 }
@@ -159,3 +158,127 @@ canvas {
   }
 }
 
+#results-container {
+  width: 80%;
+  max-width: 800px;
+}
+
+/* Results styling */
+
+a:link, a:visited, a:active {
+  color: #333;
+  font-family: futura, Ubuntu, roboto, noto, segoe ui, arial, -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, sans-serif;
+}
+
+.time-stamp {
+  margin-bottom: 1em;
+}
+
+.media {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  justify-content: center;
+}
+
+.entry-meta {
+  color: hsl(341, 10%, 20%);
+  font-weight: bold;
+}
+
+.media-caption {
+  flex-grow: 1;
+  font-size: larger;
+  margin-top: 1em;
+  font-weight: normal;
+}
+
+.time-stamp {
+  margin-bottom: 1em;
+}
+
+.pane video {
+  border-left: 1px solid hsla(30, 14%, 67%, 0.5);
+  box-shadow: 2px 2px hsla(30, 5%, 0%, 0.3);
+  width: 100%;
+}
+
+.media-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* max-width: 20em; */
+  padding: 0;
+}
+
+.media-list .pane {
+  margin-bottom: 1em;
+  background-color: hsla(0, 0%, 0%, 0.05);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.pane img {
+  width: 100%;
+  height: auto;
+  image-orientation: from-image;
+  object-fit: contain;
+}
+
+.media-list .pane h4:first-child {
+  margin-top: 0;
+}
+
+.media-list li {
+  font-family: Georgia, serif;
+  margin-bottom: 1em;
+}
+
+.media-list h3 {
+  font-weight: 200;
+}
+
+.media-list h4 {
+  font-weight: 200;
+  margin-bottom: 0.5em;
+}
+
+footer {
+  max-width: 20em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+footer > div {
+  margin-bottom: 1em;
+}
+
+.previous-indexes {
+  margin-bottom: 2em;
+  font-size: 1.5em;
+}
+
+@media all and (max-height: 568px) {
+  body {
+    font-size: 18px;
+  }
+
+  .media-list section {
+    padding: 0.5em;
+  }
+
+  .media-list input {
+    font-size: 18px;
+  }
+
+  .media-list textarea {
+    font-size: 18px;
+  }
+}
