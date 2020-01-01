@@ -4,8 +4,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ffe264;
-  background-color: #91f98b;
+  background-color: #b6e438;
   color: #333;
 }
 
@@ -145,24 +144,6 @@ canvas {
   50% { box-shadow: #222 0 0 25px; text-shadow: #b6e438 0 0 25px; }
   67% { box-shadow: #222 0 0 20px; text-shadow: #b6e438 0 0 20px; }
   100% { box-shadow: #222 0 0 2px; text-shadow: #b6e438 0 0 2px; }
-}
-
-@media all and (max-height: 568px) {
-  body {
-    font-size: 18px;
-  }
-
-  #note-form section {
-    padding: 0.5em;
-  }
-
-  #note-form input {
-    font-size: 18px;
-  }
-
-  #note-form textarea {
-    font-size: 18px;
-  }
 }
 
 #results-container {

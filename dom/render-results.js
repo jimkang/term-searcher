@@ -8,7 +8,6 @@ function renderResults({ resultsContents, contentBaseURL }) {
   var fragments = resultsContents.map(
     curry(getHTMLFragmentFromCell)(`${contentBaseURL}/media`)
   );
-  console.log(fragments);
   resultsRoot.selectAll('li').remove();
   resultsRoot.html(fragments.join('\n'));
 }
